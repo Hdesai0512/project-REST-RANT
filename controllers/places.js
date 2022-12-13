@@ -1,5 +1,9 @@
 const router = require('express')
 
+router.get('/',(req,res) => {
+    router.send('Get /places')
+})
+
 
 let places = [{
     name: 'Viceroy',
