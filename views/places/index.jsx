@@ -1,3 +1,4 @@
+const router = require("../../controllers/places")
 
 function index(data){
     let placesFormatted = data.places.map((place) => {
@@ -26,3 +27,5 @@ return (
     </Def>
 )
 }
+
+module.exports= index
