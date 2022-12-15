@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require ('express')
 const app= express()
 
+
 //Express Settings
 app.set('views', __dirname +'/views')
 app.set('view engine', 'jsx')
@@ -24,6 +25,11 @@ app.get('/',(req,res) => {
     let places = []
     res.render('places/index',{places})
 })
+// GET /places
+app.get('/', (req, res) => {
+    res.render('places/index')
+  })
+
 
 
 
