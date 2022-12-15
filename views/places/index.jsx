@@ -1,6 +1,6 @@
 const router = require("../../controllers/places")
 
-function index(data){
+function index (data){
     let placesFormatted = data.places.map((place) => {
         return (
             <div className="col-sm-6">
