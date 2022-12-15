@@ -1,8 +1,7 @@
-const router = require('express')
+const router = require('express').Router()
 
-router.get('/',(req,res) => {
-    router.send('Get /places')
-})
+
+ 
 
 
 let places = [{
