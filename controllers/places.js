@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const places = require('../models/places.js')
-const error404 = require('../views/error404.jsx')
+// const error404 = require('../views/error404.jsx')
 
 router.get('/' , (req,res) =>{
     res.render('places/index', {places})
@@ -20,10 +20,14 @@ router.get('/:id', (req, res) => {
     if (isNaN(id)) {
         res.render('error404')
     }
-    else{
-    res.render('places/show')
+    else if (!places[id]) {
+        res.render('error404')
     }
-  })
+    else{
+    res.render('places/show',{places: places[id]})
+    }
+    
+})
   
   router.post('/', (req, res) => {
     console.log(req.body)
